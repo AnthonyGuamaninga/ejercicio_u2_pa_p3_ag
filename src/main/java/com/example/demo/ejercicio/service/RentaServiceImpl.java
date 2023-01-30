@@ -11,6 +11,7 @@ import com.example.demo.ejercicio.modelo.Renta;
 import com.example.demo.ejercicio.repository.IAutomovilRepo;
 import com.example.demo.ejercicio.repository.IClienteRepo;
 import com.example.demo.ejercicio.repository.IRentaRepo;
+import com.example.demo.ejercicio.repository.IPagoRepo;
 
 @Service
 public class RentaServiceImpl implements IRentaService {
@@ -22,6 +23,9 @@ public class RentaServiceImpl implements IRentaService {
 	@Autowired
 	private IClienteRepo clienteRepo;
 	
+	@Autowired
+	private IPagoRepo pagoRepo;
+
 	@Override
 	public void realizar(String placa, String cedula, Integer numeroDias, String numeroTarjeta) {
 		// TODO Auto-generated method stub
@@ -45,5 +49,12 @@ public class RentaServiceImpl implements IRentaService {
 		// TODO Auto-generated method stub
 		return this.iRentaRepo.buscar(id);
 	}
+
+	@Override
+	public void borrar(Integer id){
+		// TODO Auto-generated method stub
+		this.iRentaRepo.eliminar(id);
+	}
+
 
 }

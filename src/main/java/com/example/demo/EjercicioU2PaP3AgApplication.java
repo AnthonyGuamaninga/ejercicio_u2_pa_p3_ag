@@ -43,6 +43,8 @@ public class EjercicioU2PaP3AgApplication implements CommandLineRunner {
 		cliente.setNombre("Anthony");
 		cliente.setRenta(null);
 		this.clienteService.registrar(cliente);
+
+		
 		
 		// FUNCIONALIDAD 2
 		this.iRentaService.realizar(automovil.getPlaca(), cliente.getCedula(), 5, "2222");
@@ -51,6 +53,11 @@ public class EjercicioU2PaP3AgApplication implements CommandLineRunner {
 		// FUNCIONALIDAD 3
 		this.automovilService.buscar(automovil.getPlaca());
 		this.clienteService.buscar(cliente.getCedula());
+		
+
+		// FUNCIONALIDAD 4
+		
+		this.iRentaService.borrar(1);
 		
 	}
 
